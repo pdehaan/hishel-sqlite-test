@@ -15,6 +15,8 @@ def main():
         print(f"total time={res.elapsed.total_seconds()}s")
         print(f"from cache={res.extensions['from_cache']}")
 
+    # This will create a `.hishel.sqlite` cache file.
+    # TODO: Investigate how to change default filename/location.
     storage = hishel.SQLiteStorage(ttl=3_600)
     # NOTE: Not sure if the `trust_env` actually... does anything. 
     # https://www.python-httpx.org/environment_variables/ but I couldn't find any referneces in hishel docs.
